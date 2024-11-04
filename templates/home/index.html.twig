@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau de Bord{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Tableau de Bord</h2>
+    <div class="row g-4">
+
+        <!-- Collaborateurs -->
+        <div class="col-md-4">
+            <div class="dashboard-card card-collaborators">
+                <h4>Collaborateurs</h4>
+                <p class="fs-3">Total: <strong>{{ collab }}</strong></p>
+            </div>
+        </div>
+
+        <!-- Fournisseurs -->
+        <div class="col-md-4">
+            <div class="dashboard-card card-suppliers">
+                <h4>Fournisseurs</h4>
+                <p class="fs-3">Total: <strong>{{ four }}</strong></p>
+            </div>
+        </div>
+
+        <!-- Matériels -->
+        <div class="col-md-4">
+            <div class="dashboard-card card-equipments">
+                <h4>Matériels</h4>
+                <p class="fs-3">Total: <strong>{{ mat }}</strong></p>
+            </div>
+        </div>
+
+        <!-- Matériels Affectés -->
+        <div class="col-md-4">
+            <div class="dashboard-card card-assigned">
+                <h4>Matériels Affectés</h4>
+                <p class="fs-3">Total: <strong>{{ matAff }}</strong></p>
+            </div>
+        </div>
+
+        <!-- Matériels en Maintenance -->
+        <div class="col-md-4">
+            <div class="dashboard-card card-maintenance">
+                <h4>Matériels en Maintenance</h4>
+                <p class="fs-3">Total: <strong>{{ matMan }}</strong></p>
+            </div>
+        </div>
+
+        <!-- Matériels Inéfectueux -->
+        <div class="col-md-4">
+            <div class="dashboard-card card-defective">
+                <h4>Matériels Indéfectueux</h4>
+                <p class="fs-3">Total: <strong>{{ matEtat }}</strong></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

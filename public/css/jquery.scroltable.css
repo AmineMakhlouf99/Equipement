@@ -1,0 +1,53 @@
+.scroltable-wrapper {
+  position: relative;
+}
+
+.scroltable-container {
+  overflow: auto;
+}
+
+.scroltable-nav {
+ display: none;
+  position: absolute;
+  width: 60px;
+  height: 100%;
+
+
+
+  cursor: pointer;
+}
+
+.scroltable-nav.scroltable-nav-left {
+
+  left: 0;
+    z-index: 2;
+/*  background: url(../images/arrow-left2.png) no-repeat 10px center, -webkit-linear-gradient(180deg, rgba(255,255,255,0), #fff); */
+
+  background: url(../images/arrow-left2.png) no-repeat 10px 300px, -webkit-linear-gradient(180deg, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-left2.png) no-repeat 10px 300px, -moz-linear-gradient(to left, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-left2.png) no-repeat 10px 300px, -ms-linear-gradient(to left, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-left2.png) no-repeat 10px 300px, -o-linear-gradient(to left, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-left2.png) no-repeat 10px 300px, linear-gradient(to left, rgba(255,255,255,0), #fff);
+
+
+   /* background-position: 10px 300px; */
+}
+
+.scroltable-nav.scroltable-nav-right {
+  right: 0;
+    z-index: 2;
+    background: url(../images/arrow-right2.png) no-repeat 10px 300px, -webkit-linear-gradient(180deg, rgba(255,255,255,0), #fff);
+    background: url(../images/arrow-right2.png) no-repeat 10px 300px, -moz-linear-gradient(to right, rgba(255,255,255,0), #fff);
+    background: url(../images/arrow-right2.png) no-repeat 10px 300px, -ms-linear-gradient(to right, rgba(255,255,255,0), #fff);
+    background: url(../images/arrow-right2.png) no-repeat 10px 300px, -o-linear-gradient(to right, rgba(255,255,255,0), #fff);
+    background: url(../images/arrow-right2.png) no-repeat 10px 300px, linear-gradient(to right, rgba(255,255,255,0), #fff);
+
+    /*
+  background: url(../images/arrow-right2.png) no-repeat right 10px center, -webkit-linear-gradient(0, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-right2.png) no-repeat right 10px center, -moz-linear-gradient(to right, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-right2.png) no-repeat right 10px center, -ms-linear-gradient(to right, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-right2.png) no-repeat right 10px center, -o-linear-gradient(to right, rgba(255,255,255,0), #fff);
+  background: url(../images/arrow-right2.png) no-repeat right 10px center, linear-gradient(to right, rgba(255,255,255,0), #fff);
+
+*/
+}

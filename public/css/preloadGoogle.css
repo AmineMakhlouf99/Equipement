@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* background Color */
+
+.dark {
+    background: #222;
+}
+
+.white {
+    background: rgba(236, 240, 245, 0.3);
+}
+
+/** Background Color **/
+
+.overflow, .circle-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overflow {
+    z-index: 9998;
+
+    width: 100vw;
+    height: 60px;
+
+/*
+   width: 100vw;
+    height: 100vh;
+
+    */
+}
+
+.circle-line {
+    z-index: 9999;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.circle-red,.circle-green,.circle-yellow,.circle-blue{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.circle-red {
+    background-color: #EA4335;
+    animation: movingUp 1s infinite linear;
+  
+}
+
+.circle-blue {
+    background-color: #4285f4;
+    animation: movingUp 1s 0.25s infinite linear;
+   
+}
+
+.circle-green {
+    background-color: #34A853;
+    animation: movingUp 1s .4s infinite linear;
+    
+  
+}
+
+.circle-yellow {
+    background-color: #FBBC05;
+    animation: movingUp 1s .6s infinite linear;
+    
+}
+
+/* CSS ANIMATION */
+
+@keyframes movingUp {
+    0% {
+    
+        opacity: 1;
+        
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

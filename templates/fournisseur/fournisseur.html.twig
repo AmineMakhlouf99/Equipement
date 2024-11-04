@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Fournisseur{% endblock %}
+{% block body %}
+<div class="container my-4 mt-5">
+    <h2>Nouveau Fournisseur</h2>
+    <form method="POST" action="{{ path('fournisseur.create') }}">
+        <div class="mb-3">
+            <label for="companyName" class="form-label">Nom de l'entreprise</label>
+            <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Nom de l'entreprise" value="{{ fournisseur.name ?? '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="contactPerson" class="form-label">Contact principal</label>
+            <input type="text" class="form-control" id="contactPerson" name="contactPerson" placeholder="Nom du contact principal" value="{{ fournisseur.contactPerson ?? '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Adresse</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Adresse du fournisseur" value="{{ fournisseur.address ?? '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Numéro de téléphone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Numéro de téléphone" value="{{ fournisseur.phone ?? '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="exemple@domain.com" value="{{ fournisseur.email ?? '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="serviceType" class="form-label">Type de services/produits</label>
+            <input type="text" class="form-control" id="serviceType" name="serviceType" placeholder="Services ou produits" value="{{ fournisseur.serviceType ?? '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="statut" class="form-label">Statut</label>
+            <select class="form-select" id="statut" name="statut">
+                <option value="Actif">Actif</option>
+                <option value="Inactif">Inactif</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+
+    
+</div>
+
+{% endblock %}

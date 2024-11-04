@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collaborateur Info{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <h2 class="mb-4">Informations sur le collaborateur</h2>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>{{ collaborateur.prenom }} {{ collaborateur.nom }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Prénom:</strong> {{ collaborateur.prenom }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Nom:</strong> {{ collaborateur.nom }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Poste:</strong> {{ collaborateur.poste }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Département:</strong> {{ collaborateur.departement }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Email:</strong> {{ collaborateur.email }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Téléphone:</strong> {{ collaborateur.telephone }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Date d'embauche:</strong> {{ collaborateur.dateEmbauche|date('d-m-Y') }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Status:</strong> {{ collaborateur.status }}
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <a href="{{ path('collaborateur.edit', {id: collaborateur.id}) }}" class="btn btn-primary">Modifier</a>
+            <a href="{{ path('collaborateur.delete', {id: collaborateur.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce collaborateur ?');" class="btn btn-danger">Supprimer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

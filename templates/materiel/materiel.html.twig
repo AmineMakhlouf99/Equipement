@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter materiel{% endblock %}
+
+{% block body %}
+<div class="container my-4 mt-5">
+    <h2 >ajouter materiel </h2>
+    <form  method="POST" action="{{ path('materiel.create') }}" >
+        <div class="mb-3">
+            <label for="equipmentName" class="form-label">Nom materiel</label>
+            <input type="text" class="form-control" id="equipmentName" name="nom" placeholder="Nom de materiel">
+        </div>
+        <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <input type="text" class="form-control" id="type" name="type" placeholder="Type de materiel">
+        </div>
+        <div class="mb-3">
+            <label for="brand" class="form-label">Marque</label>
+            <input type="text" class="form-control" id="brand" name="marque" placeholder="Marque">
+        </div>
+        <div class="mb-3">
+            <label for="model" class="form-label">Modèle</label>
+            <input type="text" class="form-control" id="model" name="modele" placeholder="Modèle">
+        </div>
+        <div class="mb-3">
+            <label for="serialNumber" class="form-label">Numéro de série</label>
+            <input type="text" class="form-control" id="serialNumber" name="numero_serie" placeholder="Numéro de série">
+        </div>
+        <div class="mb-3">
+            <label for="acquisitionDate" class="form-label">Date d'acquisition</label>
+            <input type="date" class="form-control" name="date_acquisition" id="acquisitionDate">
+        </div>
+        <div class="mb-3">
+            <label for="availabilityStatus" class="form-label">Statut de disponibilité</label>
+            <select class="form-select" name="disponibilite" id="availabilityStatus">
+                <option>Disponible</option>
+                <option>Affecté</option>
+                <option>En maintenance</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="conditionStatus" class="form-label">Statut de condition</label>
+            <select class="form-select" name="etat" id="etat">
+                <option>Indéfectueux</option>
+                <option>Défectueux</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" id="description" rows="3" placeholder="Description de l'materiel"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="value" class="form-label">Valeur de materiel</label>
+            <input type="number" class="form-control" id="value" name="valeur_materiel" placeholder="Valeur en devise">
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
+{% endblock %}

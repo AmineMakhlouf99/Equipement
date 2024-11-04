@@ -3,3 +3,91 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+home:
+    path: /home
+    controller: App\Controller\HomeController::index
+loginForm:
+    path: /login 
+    controller: App\Controller\HomeController::login
+collaborateur:
+        path: /collaborateur
+        controller: App\Controller\CollaborateurController::index 
+collaborateur.create:
+           path: /collaborateur/create
+           controller: App\Controller\CollaborateurController::create
+collaborateur.edit:
+           path: /collaborateur/edit/{id}
+           controller: App\Controller\CollaborateurController::edit
+collaborateur.delete: 
+               path: /collaborateur/delete/{id}
+               controller: App\Controller\CollaborateurController::delete 
+collaborateur.info:
+              path: /collaborateur/{id}/
+              controller: App\Controller\CollaborateurController::getCollaborateurById                         
+fournisseur:
+        path: /fournisseur
+        controller: App\Controller\FournisseurController::index 
+fournisseur.create:
+           path: /fournisseur/create
+           controller: App\Controller\FournisseurController::create
+fournisseur.edit:
+           path: /fournisseur/edit/{id}
+           controller: App\Controller\FournisseurController::edit
+fournisseur.delete: 
+               path: /fournisseur/delete/{id}
+               controller: App\Controller\FournisseurController::delete 
+fournisseur.info: 
+               path: /fournisseur/{id}/
+               controller: App\Controller\FournisseurController::getFournisseurById                           
+materiel:
+        path: /materiel
+        controller: App\Controller\MaterielController::index
+materiel.emperente:
+           path: /materiel/emperente
+           controller: App\Controller\MaterielController::emperente
+materiel.disponible:
+           path: /materiel/disponible
+           controller: App\Controller\MaterielController::disponible 
+
+materiel.create:
+           path: /materiel/create
+           controller: App\Controller\MaterielController::create                
+materiel.edit:
+           path: /materiel/edit/{id}
+           controller: App\Controller\MaterielController::edit 
+materiel.delete: 
+               path: /materiel/delete/{id}
+               controller: App\Controller\MaterielController::delete          
+materiel.info:
+            path: /materiel/{id}/
+            controller: App\Controller\MaterielController::getMaterielById                                             
+pv:
+        path: /pv
+        controller: App\Controller\PvController::index 
+pv.collab:
+          path: /pv/collaborateur
+          controller: App\Controller\PvController::pv_collaborateur
+pv.four:
+          path: /pv/fournisseur
+          controller: App\Controller\PvController::pv_fournisseur                   
+pv.create_collab:
+           path: /pv/create/collaborateur
+           controller: App\Controller\PvController::create_collaborateur
+pv.edit_collab:
+           path: /pv/collaborateur/edit/{id}
+           controller: App\Controller\PvController::edit_collaborateur        
+pv.create_four:
+           path: /pv/create/fournisseur
+           controller: App\Controller\PvController::create_fournisseur           
+pv.edit_four:
+           path: /pv/fournisseur/edit/{id}
+           controller: App\Controller\PvController::edit_fournisseur                       
+pv.delete: 
+         path: /pv/delete/{id}
+         controller: App\Controller\PvController::remove
+pv.info:
+         path: /pv/{id}
+         controller: App\Controller\PvController::info 
+logout: 
+      path: /logout

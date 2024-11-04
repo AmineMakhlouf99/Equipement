@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter collaborateur{% endblock %}
+
+{% block body %}
+<div class="container my-4 mt-5">
+    <h2>Nouveau Collaborateur</h2>
+   <form method="POST" action="{{ path('collaborateur.create') }}">
+    <div class="mb-3">
+        <label for="firstName" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Entrez le prénom" required>
+    </div>
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Entrez le nom" required>
+    </div>
+    <div class="mb-3">
+        <label for="position" class="form-label">Poste</label>
+        <input type="text" class="form-control" id="position" name="position" placeholder="Entrez le poste" required>
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Service/Département</label>
+        <input type="text" class="form-control" id="department" name="department" placeholder="Entrez le département" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Adresse e-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="exemple@domain.com" required>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Numéro de téléphone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Entrez le numéro de téléphone" required>
+    </div>
+    <div class="mb-3">
+        <label for="hireDate" class="form-label">Date d'embauche</label>
+        <input type="date" class="form-control" id="hireDate" name="hireDate" required>
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Statut</label>
+        <select class="form-select" id="status" name="status" required>
+            <option value="Actif">Actif</option>
+            <option value="Inactif">Inactif</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+
+</div>
+
+{% endblock %}

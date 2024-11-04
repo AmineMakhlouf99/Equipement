@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Materiel Info{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <h2 class="mb-4">Informations sur le matériel</h2>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>{{ materiel.nom }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Nom:</strong> {{ materiel.nom }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Numéro de série:</strong> {{ materiel.numeroserie }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Type:</strong> {{ materiel.type }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Marque:</strong> {{ materiel.marque }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Modèle:</strong> {{ materiel.modele }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Date d'acquisition:</strong> {{ materiel.dateacquisition|date('d-m-Y') }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Disponibilité:</strong> {{ materiel.disponibilite }}
+                </div>
+                <div class="col-md-6">
+                    <strong>État:</strong> {{ materiel.etat }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Valeur du matériel:</strong> {{ materiel.valeurmateriel }} €
+                </div>
+            </div>
+            <div class="mb-3">
+                <strong>Description:</strong>
+                <p>{{ materiel.description }}</p>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <a href="{{ path('materiel.edit', {id: materiel.id}) }}" class="btn btn-primary">Modifier</a>
+            <a href="{{ path('materiel.delete', {id: materiel.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce matériel ?');" class="btn btn-danger">Supprimer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

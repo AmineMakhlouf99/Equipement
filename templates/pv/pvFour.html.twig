@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}affecter fournisseur {% endblock %}
+
+{% block body %}
+<div class="container my-4 mt-5">
+    <h2>Affectation d'Équipement à un Fournisseur</h2>
+    <form action="{{ path('pv.create_four') }}" method="POST">
+        <div class="mb-3">
+            <label for="equipment" class="form-label">Équipement (nom matériel || numéro de serie matériel)</label>
+            <select class="selectpicker" id="equipment" data-live-search="true" name="materiel">
+              {% for materiel in materiels %}
+                <option value="{{ materiel.id }}">
+                {{ materiel.nom }} || {{ materiel.numero_serie }}
+                </option>
+              {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="supplierId" class="form-label">Fournisseur</label>
+            <select class="selectpicker" id="supplierId" data-live-search="true" style="z-index: 1050;" name="fournisseur">
+              {% for fournisseur in fournisseurs %}
+                <option value="{{ fournisseur.id }}">
+                {{ fournisseur.nom_entreprise }}
+                </option>
+              {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="startDate" class="form-label">Date de début d'affectation</label>
+            <input type="date" class="form-control" id="startDate" name="startDate">
+        </div>
+        <div class="mb-3">
+            <label for="endDate" class="form-label">Date de fin d'affectation (facultatif)</label>
+            <input type="date" class="form-control" id="endDate" name="endDate">
+        </div>
+        <div class="mb-3">
+            <label for="reason" class="form-label">Motif de l'affectation</label>
+            <textarea class="form-control" id="reason" rows="3" name="reason"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Affecter</button>
+    </form>
+</div>
+{% endblock %}
+

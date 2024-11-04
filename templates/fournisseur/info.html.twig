@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fournisseur Info{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <h2 class="mb-4">Informations sur le fournisseur</h2>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>{{ fournisseur.nomentreprise }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Nom de l'entreprise:</strong> {{ fournisseur.nomentreprise }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Contact principal:</strong> {{ fournisseur.contactprincipal }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Adresse:</strong> {{ fournisseur.adresse }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Téléphone:</strong> {{ fournisseur.telephone }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Email:</strong> {{ fournisseur.email }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Type de service:</strong> {{ fournisseur.typeservice }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Statut:</strong> {{ fournisseur.statut }}
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-right">
+            <a href="{{ path('fournisseur.edit', {id: fournisseur.id}) }}" class="btn btn-primary">Modifier</a>
+            <a href="{{ path('fournisseur.delete', {id: fournisseur.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce fournisseur ?');" class="btn btn-danger">Supprimer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
